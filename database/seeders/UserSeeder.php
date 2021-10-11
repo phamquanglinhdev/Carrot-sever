@@ -26,6 +26,7 @@ class UserSeeder extends Seeder
             'role'=>random_int(0,1),
             'avatar'=>"uploads/234869538_584536592582766_4369386866456327677_n (1).jpg",
         ];
+        User::create($defaultAdmin);
         User::factory()
             ->count(10)
             ->create();
