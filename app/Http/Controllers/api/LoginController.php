@@ -23,26 +23,22 @@ class LoginController extends Controller
         } else {
             return 1;
         }
-        $isAccount = false;
-        $isLogin = false;
         $users = User::get();
         foreach ($users as $user) {
             if ($user->email == $email) {
-                $isAccount = true;
                 if (Hash::check($password, $user->password)) {
-                    $isLogin = true;
                     $token = Str::random(25);
                     $user->update(['app_token' => $token]);
                     $rs = new stdClass();
                     $rs->token = $token;
                     $rs->code = 200;
                     return json_encode($rs);
-                } else {
-                    $rs = new stdClass();
-                    $rs->code = 404;
-                    return json_encode($rs);
                 }
             }
         }
+        $rs = new stdClass();
+        $rs->code = 404;
+        return json_encode($rs);
     }
+
 }
