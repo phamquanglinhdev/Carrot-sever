@@ -38,4 +38,7 @@ class LoginController extends Controller
             }
         }
     }
+    public function showInfo(Request $request){
+
+    }
 }
