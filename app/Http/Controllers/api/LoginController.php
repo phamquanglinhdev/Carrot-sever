@@ -7,38 +7,42 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use stdClass;
 
 class LoginController extends Controller
 {
-    public function login(Request $request){
-        if(isset($request->email)){
+    public function login(Request $request)
+    {
+        if (isset($request->email)) {
             $email = $request->email;
-        }else{
+        } else {
             return 1;
         }
-        if(isset($request->password)){
+        if (isset($request->password)) {
             $password = $request->password;
-        }else{
+        } else {
             return 1;
         }
         $isAccount = false;
         $isLogin = false;
-        $users= User::get();
-        foreach ($users as $user){
-            if($user->email == $email){
+        $users = User::get();
+        foreach ($users as $user) {
+            if ($user->email == $email) {
                 $isAccount = true;
-                if(Hash::check($password,$user->password)){
+                if (Hash::check($password, $user->password)) {
                     $isLogin = true;
-                    $rs = "Login success with token :".Str::random(25);
-                    $rsJson = json_encode($rs);
-                    return $rsJson;
-                }else{
-                    return "Login Fail";
+                    $token = Str::random(25);
+                    $user->update(['app_token' => $token]);
+                    $rs = new stdClass();
+                    $rs->token = $token;
+                    $rs->code = 200;
+                    return json_encode($rs);
+                } else {
+                    $rs = new stdClass();
+                    $rs->code = 404;
+                    return json_encode($rs);
                 }
             }
         }
-    }
-    public function showInfo(Request $request){
-
     }
 }

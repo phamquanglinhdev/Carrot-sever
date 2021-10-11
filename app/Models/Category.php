@@ -34,7 +34,10 @@ class Category extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+    public function videos()
+    {
+        return $this->hasMany(Video::class, 'category_id', 'id');
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

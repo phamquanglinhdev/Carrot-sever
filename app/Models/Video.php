@@ -38,6 +38,10 @@ class Video extends Model
     {
         return $this->belongsTo(Category::class, "category_id", "id");
     }
+    public function users()
+    {
+        return $this->belongsToMany(User::class, "user_category", "category_id", "user_id");
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -17,10 +18,8 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    protected $guarded = [
+        'id'
     ];
 
     /**
@@ -41,4 +40,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Relate
+     * @var
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, "user_category", "user_id", "category_id");
+    }
 }
