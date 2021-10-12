@@ -40,5 +40,4 @@ class LoginController extends Controller
         $rs->code = 404;
         return json_encode($rs);
     }
-
 }

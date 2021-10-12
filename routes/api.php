@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 Route::apiResource("category", CategoryController::class);
-Route::apiResource("video", VideoController::class);
-Route::post("/login",[LoginController::class,'login'])->name("login");
+Route::any("/video", [VideoController::class,'index'])->name("api.video");
+Route::post("/login",[LoginController::class,'login'])->name("api.login");
 Route::post("/users",[UserController::class,'showInfo'])->name("api.user.show");
 
