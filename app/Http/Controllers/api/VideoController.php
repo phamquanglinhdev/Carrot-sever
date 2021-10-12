@@ -20,7 +20,7 @@ class VideoController extends Controller
             $videos->code = 200;
         }else{
             $videos = new stdClass();
-            $videos->code = 400;
+            $videos->code = 404;
         }
         return $videos;
     }
