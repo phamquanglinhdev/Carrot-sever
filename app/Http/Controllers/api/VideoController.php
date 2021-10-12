@@ -17,7 +17,7 @@ class VideoController extends Controller
             foreach ($videos as $video) {
                 $video->thumbnail = env("APP_URL") . $video->thumbnail;
             }
-            $videos->code = 200;
+            $videos["code"] = 200;
         }else{
             $videos = new stdClass();
             $videos->code = 404;
