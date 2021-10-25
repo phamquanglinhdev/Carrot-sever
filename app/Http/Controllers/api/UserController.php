@@ -17,7 +17,7 @@ class UserController extends Controller
         foreach (User::get() as $user) {
             if (($user->app_token == $token) && ($token != "")) {
                 $isUser = true;
-                $user->category = $user->categories()->get(["name"]);
+                $user->category = $user->categories()->get();
                 $user->avatar = env("APP_URL").$user->avatar;
                 $user->code = 200;
                 return $user;
