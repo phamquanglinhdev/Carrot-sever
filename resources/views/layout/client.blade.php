@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Dtox</title>
+    <title>DL DEV TEAM - Giải pháp công nghệ 4.0</title>
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -64,7 +64,7 @@
                         <a class="nav-link" href="{{route("contact")}}">Liên hệ</a>
                     </li>
                 </ul>
-                <a href="#" class="btn btn-primary ml-lg-3 primary-shadow">Học ngay</a>
+                <a href="#" class="btn btn-primary ml-lg-3 primary-shadow">Tìm hiểu</a>
             </div>
         </nav>
     </div>
@@ -77,19 +77,23 @@
         <div class="row">
             <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
                 <!-- logo -->
-                <a href="index.html">
+                <a  href="index.html">
                     <img class="img-fluid" src="{{asset("images/logo.png")}}" alt="logo">
                 </a>
+                <div class="mt-lg-5 font-weight-bold">DL DEV TEAM - Coding and Training</div>
+                <div class="">SĐT : 0904.800.240 Mr.Linh</div>
+                <div class="">Email : phamquanglinhdev@gmail.com</div>
+                <div class="">Địa chỉ : 33 Trần Thái Tông, Dịch Vọng Hậu, Cầu Giấy, Hà Nội</div>
             </div>
             <!-- footer menu -->
-            <nav class="col-lg-8 align-self-center mb-5">
+            <nav class="col-lg-8 align-self-start mb-5">
                 <ul class="list-inline text-lg-right text-center footer-menu">
-                    <li class="list-inline-item active"><a href="index.html">Trang chủ</a></li>
-                    <li class="list-inline-item"><a class="page-scroll" href="#feature">Tính năng</a></li>
-                    <li class="list-inline-item"><a href="about.html">Về chúng tôi</a></li>
-                    <li class="list-inline-item"><a class="page-scroll" href="#team">Đội ngũ</a></li>
-                    <li class="list-inline-item"><a class="page-scroll" href="#pricing">Các gói</a></li>
-                    <li class="list-inline-item"><a href="contact.html">Liên hệ</a></li>
+                    <li class="list-inline-item active"><a href="{{route("index")}}">Trang chủ</a></li>
+                    <li class="list-inline-item"><a class="page-scroll" href="{{route("index")}}#feature">Tính năng</a></li>
+                    <li class="list-inline-item"><a href="{{route("about")}}">Về chúng tôi</a></li>
+                    <li class="list-inline-item"><a class="page-scroll" href="{{route("index")}}#team">Đội ngũ</a></li>
+                    <li class="list-inline-item"><a class="page-scroll" href="{{route("index")}}#pricing">Các gói</a></li>
+                    <li class="list-inline-item"><a href="{{route("contact")}}">Liên hệ</a></li>
                 </ul>
             </nav>
             <!-- footer social icon -->
