@@ -77,6 +77,7 @@ class VideoCrudController extends CrudController
             'model'=>'App\Models\Category',
             'entity'=>'category'
         ]);;
+        CRUD::addField(['name' => 'content', 'label' => 'Nội dung','type'=>'document']);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

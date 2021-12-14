@@ -19,6 +19,7 @@ class CreateVideosTable extends Migration
             $table->string("name");
             $table->string("thumbnail");
             $table->string("src");
+            $table->longText("content")->nullable();
             $table->timestamps();
             $table->foreign('category_id')->references("id")->on("categories");
         });
