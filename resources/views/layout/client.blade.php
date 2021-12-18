@@ -32,9 +32,11 @@
 <body>
 <!-- navigation -->
 <section class="fixed-top navigation">
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <a class="navbar-brand" href="{{route("index")}}">
+                <img src="{{asset("images/logo-xmas.png")}}" class="w-100" alt="logo">
+            </a>
             <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -78,7 +80,7 @@
             <div class="col-lg-4 text-center text-lg-left mb-4 mb-lg-0">
                 <!-- logo -->
                 <a  href="index.html">
-                    <img class="img-fluid" src="{{asset("images/logo.png")}}" alt="logo">
+                    <img class="img-fluid" src="{{asset("images/logo-xmas.png")}}" alt="logo">
                 </a>
                 <div class="mt-lg-5 font-weight-bold">DL DEV TEAM - Coding and Training</div>
                 <div class="">SĐT : 0904.800.240 Mr.Linh</div>

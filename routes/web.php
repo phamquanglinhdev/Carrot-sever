@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,4 @@ Route::get("/contact",function (){
 Route::get("/service",function (){
     return view("service");
 })->name("service");
+Route::get("/course/{page?}",[CourseController::class,"index","id"])->where(["id"])->name("course");
